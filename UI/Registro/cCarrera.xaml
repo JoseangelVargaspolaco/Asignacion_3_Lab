@@ -1,0 +1,44 @@
+<Window x:Class="trabajo_3.UI.Registro.cCarrera"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:trabajo_3.UI.Registro"
+        mc:Ignorable="d"
+       Title="Registro de carreras" Height="540" Width="550">
+       
+    <Grid Margin="0,0,0,-6" >
+
+        <Label Content="CARRERA-ID" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Width="142" Height="43"/>
+        <CheckBox Content="Activo" HorizontalAlignment="Left" Margin="300,60,0,0" VerticalAlignment="Top" />
+        <TextBox  x:Name="carreraid" HorizontalAlignment="Left" Margin="95,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Height="24" />
+        <Label Content="NOMBRE DE LA CARRERA" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="269" Height="46"/>
+
+        <StackPanel Orientation="Horizontal">
+
+            <ComboBox Text="{Binding Nombre}" x:Name="Carreras"  Margin="162,112,0,0"  VerticalAlignment="Top" Width="209">
+
+                <ComboBox.Items> 
+
+                    <ComboBoxItem Content="Medicina" />
+                    <ComboBoxItem Content="Derecho" />
+                    <ComboBoxItem Content="Psicologia" />
+                    <ComboBoxItem Content="Ing.Sistemas" />
+                    <ComboBoxItem Content="Ing.Civil" />
+                    <ComboBoxItem Content="Arquitectura" />
+                    <ComboBoxItem Content="Turismo" />
+
+                </ComboBox.Items>
+
+            </ComboBox>
+
+        </StackPanel>
+
+        <Button  x:Name="guardar" Content="💾Guardar" HorizontalAlignment="Left" Margin="60,180,0,0" VerticalAlignment="Top" Click="guardar_Click" Width="102" Height="46"/>
+        <Button  x:Name="eliminar" Content="❌Eliminar" HorizontalAlignment="Left" Margin="370,180,0,0" VerticalAlignment="Top" Click="eliminar_Click" Width="102" Height="46"/>
+        <Button  x:Name="editar" Content="✔Editar" HorizontalAlignment="Left" Margin="216,180,0,0" VerticalAlignment="Top" Click="editar_Click" Width="102" Height="46"/>
+        <DataGrid x:Name= "consulta_2" HorizontalAlignment="Left" Height="228" Margin="25,250,0,0" VerticalAlignment="Top" Width="490" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        
+    </Grid>
+    
+</Window>
